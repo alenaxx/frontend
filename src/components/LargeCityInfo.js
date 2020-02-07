@@ -79,7 +79,7 @@ class LargeCityInfo extends Component {
     getWeather = async (lat, lon) => {
         await this.setState({isLoaded: false, connectProblems: false});
 
-        fetch('http://localhost:3306/weather/coordinates/?lat=' + lat + '&lon=' + lon)
+        fetch('http://localhost:3001/weather/coordinates/?lat=' + lat + '&lon=' + lon)
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);

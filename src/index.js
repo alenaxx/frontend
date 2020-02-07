@@ -3,7 +3,7 @@ import {render} from 'react-dom'
 import App from './components/App'
 
 
-fetch('http://localhost:3306/')
+fetch('http://localhost:3001/')
     .then(() => {
             render(<App/>, document.getElementById('root'))
         }

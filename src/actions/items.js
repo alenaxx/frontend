@@ -52,7 +52,7 @@ export function updateList(newList) {
 
 export function doDeleteItem(item) {
     return (dispatch) => {
-        fetch(`http://localhost:3306/favourites`,
+        fetch(`http://localhost:3001/favourites`,
             {
                 method: "DELETE",
                 headers: {
@@ -87,7 +87,7 @@ export function doAddItem(item, itemList) {
     });
     if (!duplicate) {
         return (dispatch) => {
-            fetch(`http://localhost:3306/favourites`,
+            fetch(`http://localhost:3001/favourites`,
                 {
                     method: "POST",
                     headers: {
@@ -112,7 +112,7 @@ export function doAddItem(item, itemList) {
 
 export function doUpdateList() {
     return (dispatch) => {
-        fetch(`http://localhost:3306/favourites`)
+        fetch(`http://localhost:3001/favourites`)
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
@@ -131,7 +131,7 @@ export function doUpdateList() {
 export function itemsFetchData(city) {
     return (dispatch) => {
         dispatch(loading(city));
-        fetch(`http://localhost:3306/weather?city=${city}`)
+        fetch(`http://localhost:3001/weather?city=${city}`)
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
